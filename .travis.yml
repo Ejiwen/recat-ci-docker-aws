@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true reactravis npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "react-docker"
+  env: "Reactdocker-env"
+  bucket_name: "elasticbeanstalk-us-west-1-867349675301"
+  bucket_path: "react-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
