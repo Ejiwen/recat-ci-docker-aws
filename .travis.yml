@@ -20,5 +20,4 @@ deploy:
   env: "Reactdocker-env"
   bucket_name: "elasticbeanstalk-us-west-1-867349675301"
   on:
-    repo: Ejiwen/recat-ci-docker-aws
     branch: master
